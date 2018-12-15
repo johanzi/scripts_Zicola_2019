@@ -1,17 +1,25 @@
 smRNA-seq analysis
 ===
 
+# Required softwares
+
+* bwai (v0.7.15)
+* bedtools (v2.25.0)
+* R (v3.5.0)
+
 # Data
-Available as fastq files in NCBI BioProject [PRJNA427142](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA427142)
+
+Data available as fastq files in NCBI BioProject [PRJNA427142](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA427142)
 
 Library codes:
-1794_A: Block C IR #15-2
-1794_A: Block C IR #15-3
-1794_A: Block C IR #27-3
-1794_A: Block C IR #27-4
-3634_A: Col-0
-3634_B: Block E IR #16-5
-3634_C: Block E IR #18-5
+
+* 1794_A: Block C IR #15-2
+* 1794_A: Block C IR #15-3
+* 1794_A: Block C IR #27-3
+* 1794_A: Block C IR #27-4
+* 3634_A: Col-0
+* 3634_B: Block E IR #16-5
+* 3634_C: Block E IR #18-5
 
 # Read mapping
 
@@ -30,6 +38,8 @@ done
 ```
 
 # Generate density plot (Fig. 2a, Extended Fig. 6b)
+
+## Extract reads mapping at IR
 
 ```
 for i in *bam; do
@@ -66,7 +76,7 @@ wc –l *target_ Block*_region_plus_minus_100bp.bed
 
 Only 2-6 reads are detected in the two libraries corresponding to the non-transgenic siblings (B = #15-3, C = #27-3)
 
-To normalize read count at IR to the total number of reads per library, The number of reads in *target_region_plus_minus_100bp.bed is divided the by number of reads in bed files for the whole library
+To normalize read count at IR to the total number of reads per library, The number of reads in \*target_region_plus_minus_100bp.bed is divided the by number of reads in bed files for the whole library
 
 ```
 for i in *fastq.bam.bed
@@ -88,12 +98,12 @@ All libraries have about 10M reads, use the values of read count for library A a
 
 Bed files ready to be analyzed in R (see script below)
 
-
 ## Generate density plot in R 
 
-### For libraries project 1794
+### For libraries project 1794 (Block C IR)
 
 Load R libraries
+
 ```{r}
 library(GenomicRanges)
 library(GenomicAlignments)
@@ -105,6 +115,7 @@ library(Biostrings)
 ```
 
 Load bed files for the 2 libraries which map smRNAs at Block C (A, D)
+
 ```{r}
 readsA <- import.bed(con="1794_A.fastq.bam.bed.target_region_plus_minus_100bp.bed")
 readsD <- import.bed(con="1794_D.fastq.bam.bed.target_region_plus_minus_100bp.bed")
@@ -116,9 +127,10 @@ covA <- coverage(readsA)
 covD <- coverage(readsD)
 ```
 
-### For libraries project 3634
+### For libraries project 3634 (Block E IR + WT)
 
 Load bed files for the WT Col-0 (A) and the 2 libraries which map smRNAs at Block E (B, C)
+
 ```{r}
 readsA = import.bed(con="3634_A.fastq.gz.bam.bed.target_region_BlockE_plus_minus_100bp.bed")
 readsB = import.bed(con="3634_B.fastq.gz.bam.bed.target_region_BlockE_plus_minus_100bp.bed")
@@ -129,6 +141,7 @@ covC <- coverage(readsC)
 ```
 
 Calculate coverage
+
 ```{r}
 covA <- coverage(readsA)
 covD <- coverage(readsD)
@@ -156,6 +169,7 @@ Total length plot is 24326384 - 24325772 = 612
 end = 24326384 - 24326334 = 50 so 612 - 50 = 562
 
 Create vertical lines at the beginning and the end of the IR
+
 ```{r}
 abline(v=16, col="red")
 abline(v=562, col="red")
@@ -168,10 +182,12 @@ start = 24325922 - 24325772 = 150
 end = 24326384 - 24326268  = 116 so 612 - 116 = 496
 
 Create vertical lines at the beginning and the end of Block C
+
 ```{r}
 abline(v=150, col="blue")
 abline(v=496, col="blue")
 ```
+
 
 ## Plot read density for Block E
 
@@ -206,6 +222,7 @@ abline(v=614, col="blue")
 ### For Block C IR
 
 Create a report with the number of read mapping at Block C. Each line in the bam file matches with one mapped read
+
 ```
 for i in *bam; do
     samtools view $i "chr1:24325922-24326301" > ${i}_reads_BlockC.sam
@@ -213,13 +230,14 @@ done
 ```
 
 For the transgene region (a bit wider than the BlockC itself)
+
 ```
 for i in *bam; do
     samtools view $i "chr1:24325788-24326334" > ${i}_reads_target_region.sam
 done
 ```
 
-Get rid of unremoved part of adapter sequences on the reads (unproper trimming of Cutadapt probably caused by short length of the reads). Considered the mapped part of each read. To do so, the following for loop takes the 19th column of a BAM file, separates the fields of the 19th column which are separated by colons, remove all '^' special characters, letter+number before and after the length of the mapped part of the reads, puts the content in *ready file. I ensure with grep that I have only values containing 2 figures. The *ready file contains the read length for each mapped read.
+Get rid of unremoved part of adapter sequences on the reads (unproper trimming of Cutadapt probably caused by short length of the reads). Considered the mapped part of each read. To do so, the following for loop takes the 19th column of a BAM file, separates the fields of the 19th column which are separated by colons, remove all '^' special characters, letter+number before and after the length of the mapped part of the reads, puts the content in *ready file. I ensure with grep that I have only values containing 2 figures. The *ready file contains the read length for each mapped read. This problem was solved for the project 3634 (Block E IR).
 
 ```
  for i in *sam;  do
@@ -232,6 +250,7 @@ Get rid of unremoved part of adapter sequences on the reads (unproper trimming o
 
 ### For Block E IR
 
+
 ```
 for i in *bam; do
     samtools index -b $i
@@ -243,53 +262,41 @@ done
 
 ### For Block C IR
 
-Read size distribution at the target region
-In R
+For normalized read length distribution, just give percent of smRNA-seq in each category as we look only into the reads into BlockC. To do, use prop.table function of contigency table generated with table()
+
 ```{r}
 lengthA = scan("1794_A.fastq.bam_reads_target_region.ready")
 lengthB = scan("1794_B.fastq.bam_reads_target_region.ready")
 lengthC = scan("1794_C.fastq.bam_reads_target_region.ready")
 lengthD = scan("1794_D.fastq.bam_reads_target_region.ready")
+
 dataList = list("#15-2"=lengthA, "#15-3"=lengthB, "#27-3"=lengthC, "#27-4"=lengthD)
-```
 
-Display boxplot
-
-```{r}
 boxplot(dataList, main="Read distribution at target region", cex.main=1, ylab="read length")
+
 par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
 
-# Count by numbers and provide get frequencies of read size distribution 
-# Element 1 of the dataList = library A
-
-table(dataList[[1]])
-
-# Plot the distribution
 plot(prop.table(table(dataList[[1]])),xlim=c(18,25),  xlab="size (nt)", ylab="number of reads", main = "transgenic #15-2", cex.main=1)
-
-# Library D
-table(dataList[[4]])
-#Plot the distribution
 plot(prop.table(table(dataList[[4]])), xlim=c(18,25),  xlab="size (nt)", ylab="number of reads", main = "transgenic #27-4", cex.main=1)
-
 mtext("Distribution of read sizes at target region", outer = TRUE, cex = 1)
+
 ```
 
-### For Block E
+### For Block E IR
+
 
 ```{r}
+
+lengthA = scan("3634_A.fastq.gz.bam_reads_BlockE.sam.ready")
 lengthB = scan("3634_B.fastq.gz.bam_reads_BlockE.sam.ready")
 lengthC = scan("3634_C.fastq.gz.bam_reads_BlockE.sam.ready")
-dataList = list("#16-5"=lengthB, "#18-5"=lengthC)
-```
 
-Display boxplot
+dataList = list("Col-0"=lengthA, "#16-5"=lengthB, "#18-5"=lengthC)
+#Display boxplot
 
-Normalized read length distribution, just give percent of smRNA-seq in each category as we look only into the reads into BlockC. To do, use prop.table function of contigency table generated with table()
+boxplot(dataList, main="Read distribution at target region", cex.main=1, ylab="read length")
 
-Size distribution with read frequency
-
-```{r}
+par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
 
 plot(prop.table(table(dataList[[1]])),xlim=c(18,25), ylim=c(0,0.65),  xlab="size (nt)", ylab="", main = "transgenic #16-5", cex.axis=1.3, cex.main=1)
 plot(prop.table(table(dataList[[2]])), xlim=c(18,25),  ylim=c(0,0.65), xlab="size (nt)", ylab="", main = "transgenic #18-5", cex.axis=1.3, cex.main=1)
