@@ -1,0 +1,16 @@
+construct	line	value
+BlockA	line1	-3.476666667
+BlockA	line2	0.866666667
+BlockA	line3	0.886666667
+BlockC_BlockA	line1	2.706666667
+BlockC_BlockA	line2	3.656666667
+BlockC_BlockA	line3	2.246666667
+BlockC_minNOS	line1	0.026666667
+BlockC_minNOS	line2	0.046666667
+BlockC_minNOS	line3	0.27
+BlockErev_BlockA	line1	2.013333333
+BlockErev_BlockA	line2	2.21
+BlockErev_BlockA	line3	3.346666667
+BlockErev_minNOS	line1	0.22
+BlockErev_minNOS	line2	0.523333333
+BlockErev_minNOS	line3	-3.803333333
