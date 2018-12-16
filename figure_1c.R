@@ -1,5 +1,6 @@
-#Flowering time new RNAi line culture 31660
+#Flowering time Block C IR line culture 31660
 
+#Grown in MD conditions (12h light / 12h dark)
 
 #libraries to load
 ########################################################
