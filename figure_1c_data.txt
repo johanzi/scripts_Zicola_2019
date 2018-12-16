@@ -1,170 +1,170 @@
-line	generation	transgene	condition	photoperiod	pot_size	culture	rosette	cauline
-0T	NA	no	cabinet	MD	7x7	31660	29	7
-0T	NA	no	cabinet	MD	7x7	31660	32	6
-0T	NA	no	cabinet	MD	7x7	31660	31	7
-0T	NA	no	cabinet	MD	7x7	31660	29	7
-0T	NA	no	cabinet	MD	7x7	31660	21	NA
-0T	NA	no	cabinet	MD	7x7	31660	35	6
-0T	NA	no	cabinet	MD	7x7	31660	30	7
-0T	NA	no	cabinet	MD	7x7	31660	31	7
-0T	NA	no	cabinet	MD	7x7	31660	29	6
-0T	NA	no	cabinet	MD	7x7	31660	12	NA
-ft.10	NA	no	cabinet	MD	7x7	31660	48	9
-ft.10	NA	no	cabinet	MD	7x7	31660	48	12
-ft.10	NA	no	cabinet	MD	7x7	31660	49	11
-ft.10	NA	no	cabinet	MD	7x7	31660	50	12
-ft.10	NA	no	cabinet	MD	7x7	31660	44	10
-ft.10	NA	no	cabinet	MD	7x7	31660	48	13
-ft.10	NA	no	cabinet	MD	7x7	31660	47	12
-ft.10	NA	no	cabinet	MD	7x7	31660	49	11
-ft.10	NA	no	cabinet	MD	7x7	31660	52	12
-ft.10	NA	no	cabinet	MD	7x7	31660	52	14
-2.15	T3	yes	cabinet	MD	7x7	31660	42	10
-2.15	T3	yes	cabinet	MD	7x7	31660	46	10
-2.15	T3	yes	cabinet	MD	7x7	31660	67	10
-2.15	T3	yes	cabinet	MD	7x7	31660	35	9
-2.15	T3	yes	cabinet	MD	7x7	31660	51	NA
-2.15	T3	yes	cabinet	MD	7x7	31660	43	6
-2.15	T3	yes	cabinet	MD	7x7	31660	56	NA
-2.15	T3	yes	cabinet	MD	7x7	31660	47	8
-2.15	T3	yes	cabinet	MD	7x7	31660	46	7
-2.15	T3	yes	cabinet	MD	7x7	31660	42	8
-3.15	T3	no	cabinet	MD	7x7	31660	35	8
-3.15	T3	no	cabinet	MD	7x7	31660	31	6
-3.15	T3	no	cabinet	MD	7x7	31660	34	5
-3.15	T3	no	cabinet	MD	7x7	31660	36	8
-3.15	T3	no	cabinet	MD	7x7	31660	40	7
-3.15	T3	no	cabinet	MD	7x7	31660	33	6
-3.15	T3	no	cabinet	MD	7x7	31660	30	6
-3.15	T3	no	cabinet	MD	7x7	31660	39	5
-3.15	T3	no	cabinet	MD	7x7	31660	31	6
-3.15	T3	no	cabinet	MD	7x7	31660	31	4
-3.27	T3	no	cabinet	MD	7x7	31660	27	5
-3.27	T3	no	cabinet	MD	7x7	31660	36	7
-3.27	T3	no	cabinet	MD	7x7	31660	32	5
-3.27	T3	no	cabinet	MD	7x7	31660	36	7
-3.27	T3	no	cabinet	MD	7x7	31660	34	6
-3.27	T3	no	cabinet	MD	7x7	31660	31	4
-3.27	T3	no	cabinet	MD	7x7	31660	39	11
-3.27	T3	no	cabinet	MD	7x7	31660	37	5
-3.27	T3	no	cabinet	MD	7x7	31660	35	4
-3.27	T3	no	cabinet	MD	7x7	31660	36	5
-2.15	T4	yes	cabinet	MD	7x7	31660	40	6
-2.15	T4	yes	cabinet	MD	7x7	31660	46	7
-2.15	T4	yes	cabinet	MD	7x7	31660	43	7
-2.15	T4	yes	cabinet	MD	7x7	31660	50	8
-2.15	T4	yes	cabinet	MD	7x7	31660	42	8
-2.15	T4	yes	cabinet	MD	7x7	31660	45	7
-2.15	T4	yes	cabinet	MD	7x7	31660	40	6
-2.15	T4	yes	cabinet	MD	7x7	31660	38	8
-2.15	T4	yes	cabinet	MD	7x7	31660	48	8
-2.15	T4	yes	cabinet	MD	7x7	31660	52	8
-3.15	T4	no	cabinet	MD	7x7	31660	34	6
-3.15	T4	no	cabinet	MD	7x7	31660	35	6
-3.15	T4	no	cabinet	MD	7x7	31660	32	6
-3.15	T4	no	cabinet	MD	7x7	31660	35	6
-3.15	T4	no	cabinet	MD	7x7	31660	40	6
-3.15	T4	no	cabinet	MD	7x7	31660	31	6
-3.15	T4	no	cabinet	MD	7x7	31660	33	6
-3.15	T4	no	cabinet	MD	7x7	31660	28	6
-3.15	T4	no	cabinet	MD	7x7	31660	34	NA
-3.15	T4	no	cabinet	MD	7x7	31660	35	7
-3.27	T4	no	cabinet	MD	7x7	31660	37	7
-3.27	T4	no	cabinet	MD	7x7	31660	31	6
-3.27	T4	no	cabinet	MD	7x7	31660	31	7
-3.27	T4	no	cabinet	MD	7x7	31660	33	6
-3.27	T4	no	cabinet	MD	7x7	31660	33	6
-3.27	T4	no	cabinet	MD	7x7	31660	35	7
-3.27	T4	no	cabinet	MD	7x7	31660	21	6
-3.27	T4	no	cabinet	MD	7x7	31660	27	6
-3.27	T4	no	cabinet	MD	7x7	31660	32	5
-3.27	T4	no	cabinet	MD	7x7	31660	33	7
-4.27	T4	yes	cabinet	MD	7x7	31660	37	8
-4.27	T4	yes	cabinet	MD	7x7	31660	41	8
-4.27	T4	yes	cabinet	MD	7x7	31660	42	10
-4.27	T4	yes	cabinet	MD	7x7	31660	38	8
-4.27	T4	yes	cabinet	MD	7x7	31660	45	8
-4.27	T4	yes	cabinet	MD	7x7	31660	40	11
-4.27	T4	yes	cabinet	MD	7x7	31660	28	10
-4.27	T4	yes	cabinet	MD	7x7	31660	45	10
-4.27	T4	yes	cabinet	MD	7x7	31660	48	8
-4.27	T4	yes	cabinet	MD	7x7	31660	59	10
-2.15	T5	yes	cabinet	MD	7x7	31660	38	9
-2.15	T5	yes	cabinet	MD	7x7	31660	45	7
-2.15	T5	yes	cabinet	MD	7x7	31660	43	7
-2.15	T5	yes	cabinet	MD	7x7	31660	46	9
-2.15	T5	yes	cabinet	MD	7x7	31660	40	NA
-2.15	T5	yes	cabinet	MD	7x7	31660	39	7
-2.15	T5	yes	cabinet	MD	7x7	31660	55	8
-2.15	T5	yes	cabinet	MD	7x7	31660	42	8
-2.15	T5	yes	cabinet	MD	7x7	31660	65	9
-2.15	T5	yes	cabinet	MD	7x7	31660	44	7
-3.15	T5	no	cabinet	MD	7x7	31660	38	5
-3.15	T5	no	cabinet	MD	7x7	31660	30	6
-3.15	T5	no	cabinet	MD	7x7	31660	32	6
-3.15	T5	no	cabinet	MD	7x7	31660	34	5
-3.15	T5	no	cabinet	MD	7x7	31660	32	6
-3.15	T5	no	cabinet	MD	7x7	31660	39	7
-3.15	T5	no	cabinet	MD	7x7	31660	36	10
-3.15	T5	no	cabinet	MD	7x7	31660	41	5
-3.15	T5	no	cabinet	MD	7x7	31660	31	7
-3.15	T5	no	cabinet	MD	7x7	31660	24	NA
-3.27	T5	no	cabinet	MD	7x7	31660	21	7
-3.27	T5	no	cabinet	MD	7x7	31660	33	6
-3.27	T5	no	cabinet	MD	7x7	31660	36	8
-3.27	T5	no	cabinet	MD	7x7	31660	29	7
-3.27	T5	no	cabinet	MD	7x7	31660	32	5
-3.27	T5	no	cabinet	MD	7x7	31660	33	4
-3.27	T5	no	cabinet	MD	7x7	31660	32	6
-3.27	T5	no	cabinet	MD	7x7	31660	38	6
-3.27	T5	no	cabinet	MD	7x7	31660	34	6
-3.27	T5	no	cabinet	MD	7x7	31660	40	7
-4.27	T5	yes	cabinet	MD	7x7	31660	33	6
-4.27	T5	yes	cabinet	MD	7x7	31660	37	NA
-4.27	T5	yes	cabinet	MD	7x7	31660	40	NA
-4.27	T5	yes	cabinet	MD	7x7	31660	57	9
-4.27	T5	yes	cabinet	MD	7x7	31660	51	11
-4.27	T5	yes	cabinet	MD	7x7	31660	49	8
-4.27	T5	yes	cabinet	MD	7x7	31660	40	9
-4.27	T5	yes	cabinet	MD	7x7	31660	36	7
-4.27	T5	yes	cabinet	MD	7x7	31660	56	NA
-4.27	T5	yes	cabinet	MD	7x7	31660	54	8
-2.15	T6	yes	cabinet	MD	7x7	31660	45	6
-2.15	T6	yes	cabinet	MD	7x7	31660	41	9
-2.15	T6	yes	cabinet	MD	7x7	31660	50	8
-2.15	T6	yes	cabinet	MD	7x7	31660	55	8
-2.15	T6	yes	cabinet	MD	7x7	31660	47	9
-2.15	T6	yes	cabinet	MD	7x7	31660	39	10
-2.15	T6	yes	cabinet	MD	7x7	31660	44	6
-2.15	T6	yes	cabinet	MD	7x7	31660	45	7
-2.15	T6	yes	cabinet	MD	7x7	31660	38	6
-2.15	T6	yes	cabinet	MD	7x7	31660	47	7
-3.15	T6	no	cabinet	MD	7x7	31660	32	8
-3.15	T6	no	cabinet	MD	7x7	31660	36	5
-3.15	T6	no	cabinet	MD	7x7	31660	37	7
-3.15	T6	no	cabinet	MD	7x7	31660	38	7
-3.15	T6	no	cabinet	MD	7x7	31660	28	5
-3.15	T6	no	cabinet	MD	7x7	31660	38	8
-3.15	T6	no	cabinet	MD	7x7	31660	34	5
-3.15	T6	no	cabinet	MD	7x7	31660	37	6
-3.15	T6	no	cabinet	MD	7x7	31660	32	5
-3.15	T6	no	cabinet	MD	7x7	31660	26	NA
-3.27	T6	no	cabinet	MD	7x7	31660	37	7
-3.27	T6	no	cabinet	MD	7x7	31660	31	7
-3.27	T6	no	cabinet	MD	7x7	31660	36	7
-3.27	T6	no	cabinet	MD	7x7	31660	34	5
-3.27	T6	no	cabinet	MD	7x7	31660	36	11
-3.27	T6	no	cabinet	MD	7x7	31660	28	5
-3.27	T6	no	cabinet	MD	7x7	31660	32	NA
-3.27	T6	no	cabinet	MD	7x7	31660	33	6
-3.27	T6	no	cabinet	MD	7x7	31660	36	6
-4.27	T6	yes	cabinet	MD	7x7	31660	49	NA
-4.27	T6	yes	cabinet	MD	7x7	31660	45	8
-4.27	T6	yes	cabinet	MD	7x7	31660	45	7
-4.27	T6	yes	cabinet	MD	7x7	31660	43	7
-4.27	T6	yes	cabinet	MD	7x7	31660	48	9
-4.27	T6	yes	cabinet	MD	7x7	31660	46	10
-4.27	T6	yes	cabinet	MD	7x7	31660	45	8
-4.27	T6	yes	cabinet	MD	7x7	31660	63	NA
-4.27	T6	yes	cabinet	MD	7x7	31660	44	NA
-4.27	T6	yes	cabinet	MD	7x7	31660	58	NA
+line	generation	rosette	cauline
+0T	NA	29	7
+0T	NA	32	6
+0T	NA	31	7
+0T	NA	29	7
+0T	NA	21	NA
+0T	NA	35	6
+0T	NA	30	7
+0T	NA	31	7
+0T	NA	29	6
+0T	NA	12	NA
+ft.10	NA	48	9
+ft.10	NA	48	12
+ft.10	NA	49	11
+ft.10	NA	50	12
+ft.10	NA	44	10
+ft.10	NA	48	13
+ft.10	NA	47	12
+ft.10	NA	49	11
+ft.10	NA	52	12
+ft.10	NA	52	14
+2.15	T3	42	10
+2.15	T3	46	10
+2.15	T3	67	10
+2.15	T3	35	9
+2.15	T3	51	NA
+2.15	T3	43	6
+2.15	T3	56	NA
+2.15	T3	47	8
+2.15	T3	46	7
+2.15	T3	42	8
+3.15	T3	35	8
+3.15	T3	31	6
+3.15	T3	34	5
+3.15	T3	36	8
+3.15	T3	40	7
+3.15	T3	33	6
+3.15	T3	30	6
+3.15	T3	39	5
+3.15	T3	31	6
+3.15	T3	31	4
+3.27	T3	27	5
+3.27	T3	36	7
+3.27	T3	32	5
+3.27	T3	36	7
+3.27	T3	34	6
+3.27	T3	31	4
+3.27	T3	39	11
+3.27	T3	37	5
+3.27	T3	35	4
+3.27	T3	36	5
+2.15	T4	40	6
+2.15	T4	46	7
+2.15	T4	43	7
+2.15	T4	50	8
+2.15	T4	42	8
+2.15	T4	45	7
+2.15	T4	40	6
+2.15	T4	38	8
+2.15	T4	48	8
+2.15	T4	52	8
+3.15	T4	34	6
+3.15	T4	35	6
+3.15	T4	32	6
+3.15	T4	35	6
+3.15	T4	40	6
+3.15	T4	31	6
+3.15	T4	33	6
+3.15	T4	28	6
+3.15	T4	34	NA
+3.15	T4	35	7
+3.27	T4	37	7
+3.27	T4	31	6
+3.27	T4	31	7
+3.27	T4	33	6
+3.27	T4	33	6
+3.27	T4	35	7
+3.27	T4	21	6
+3.27	T4	27	6
+3.27	T4	32	5
+3.27	T4	33	7
+4.27	T4	37	8
+4.27	T4	41	8
+4.27	T4	42	10
+4.27	T4	38	8
+4.27	T4	45	8
+4.27	T4	40	11
+4.27	T4	28	10
+4.27	T4	45	10
+4.27	T4	48	8
+4.27	T4	59	10
+2.15	T5	38	9
+2.15	T5	45	7
+2.15	T5	43	7
+2.15	T5	46	9
+2.15	T5	40	NA
+2.15	T5	39	7
+2.15	T5	55	8
+2.15	T5	42	8
+2.15	T5	65	9
+2.15	T5	44	7
+3.15	T5	38	5
+3.15	T5	30	6
+3.15	T5	32	6
+3.15	T5	34	5
+3.15	T5	32	6
+3.15	T5	39	7
+3.15	T5	36	10
+3.15	T5	41	5
+3.15	T5	31	7
+3.15	T5	24	NA
+3.27	T5	21	7
+3.27	T5	33	6
+3.27	T5	36	8
+3.27	T5	29	7
+3.27	T5	32	5
+3.27	T5	33	4
+3.27	T5	32	6
+3.27	T5	38	6
+3.27	T5	34	6
+3.27	T5	40	7
+4.27	T5	33	6
+4.27	T5	37	NA
+4.27	T5	40	NA
+4.27	T5	57	9
+4.27	T5	51	11
+4.27	T5	49	8
+4.27	T5	40	9
+4.27	T5	36	7
+4.27	T5	56	NA
+4.27	T5	54	8
+2.15	T6	45	6
+2.15	T6	41	9
+2.15	T6	50	8
+2.15	T6	55	8
+2.15	T6	47	9
+2.15	T6	39	10
+2.15	T6	44	6
+2.15	T6	45	7
+2.15	T6	38	6
+2.15	T6	47	7
+3.15	T6	32	8
+3.15	T6	36	5
+3.15	T6	37	7
+3.15	T6	38	7
+3.15	T6	28	5
+3.15	T6	38	8
+3.15	T6	34	5
+3.15	T6	37	6
+3.15	T6	32	5
+3.15	T6	26	NA
+3.27	T6	37	7
+3.27	T6	31	7
+3.27	T6	36	7
+3.27	T6	34	5
+3.27	T6	36	11
+3.27	T6	28	5
+3.27	T6	32	NA
+3.27	T6	33	6
+3.27	T6	36	6
+4.27	T6	49	NA
+4.27	T6	45	8
+4.27	T6	45	7
+4.27	T6	43	7
+4.27	T6	48	9
+4.27	T6	46	10
+4.27	T6	45	8
+4.27	T6	63	NA
+4.27	T6	44	NA
+4.27	T6	58	NA
