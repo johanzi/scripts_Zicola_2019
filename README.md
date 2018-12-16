@@ -142,3 +142,14 @@ Script in [figure_2e.R](figure_2e.R)
 Script in [smRNA-seq_analysis.md](smRNA-seq_analysis.md)
 
 
+## GUS expression data
+
+### Figure 4b
+
+
+
+Data in [figure_4b_data.txt](figure_4b_data.txt)
+
+Script in [figure_4b.R](figure_4b.R)
+
+
