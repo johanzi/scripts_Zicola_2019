@@ -1,7 +1,4 @@
-
-
 #flowering time new RNAi line culture 34615
-
 
 #libraries to load
 ########################################################

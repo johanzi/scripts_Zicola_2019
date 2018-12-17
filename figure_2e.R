@@ -2,7 +2,10 @@
 
 #Data analysis H3K9me2
 
+#libraries to load
+########################################################
 library(ggplot2)#to make plots with colored factors
+########################################################
 
 #Load data in a dataframe
 data = read.table("figure_2e_data.txt", header=TRUE, dec=",", sep="\t")

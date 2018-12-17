@@ -1,11 +1,11 @@
 #libraries to load
-
-
-# Samples from cultures 44052, 44082, 44127
-
+########################################################
 library(ggplot2)#to make plots with colored factors
 library(multcomp)#Do multicomparison
 library(agricolae)
+########################################################
+
+# Samples from cultures 44052, 44082, 44127
 
 #FT expression for Block C IR construct
 
@@ -17,13 +17,8 @@ df = read.table("figure_3f_data.txt",
 
 df$ratio <- as.numeric(df$ratio)
 
-bartlett.test(df, ratio~line)
-qqnorm(df$ratio)
-qqline(df$ratio)
-with(df, shapiro.test(ratio))
 
-
-# Plot
+# Plot ----------------
 
 # Reorder factors to display in proper order
 df$line <- factor(df$line, levels = c("0T", "ft-10", "15-2-2","16-4","18-4","27-1","29-11"))
@@ -36,14 +31,14 @@ ggplot(df, aes(line, ratio)) +
   theme_light() +
   ylab("") + 
   xlab("")#+
-  theme(axis.text.x = element_blank(),legend.text=element_text(size=8), legend.title=element_text(size=8)) 
+theme(axis.text.x = element_blank(),legend.text=element_text(size=8), legend.title=element_text(size=8)) 
 
+# Statistics --------------
 
-
-###################################################
-###################################################
-
-# Parametric test
+bartlett.test(df, ratio~line)
+qqnorm(df$ratio)
+qqline(df$ratio)
+with(df, shapiro.test(ratio))
 
 #ANOVA
 attach(df)

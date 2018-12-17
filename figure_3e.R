@@ -1,11 +1,10 @@
 #Flowering time new RNAi line culture 40889
 
-
 #libraries to load
 ########################################################
 library(multcomp)#Do multicomparison
 library(agricolae)#Load TukeyHSD package
-library(car)#Leven test
+########################################################
 
 df <-  read.table("figure_3e_data.txt", stringsAsFactors=TRUE,sep="\t", na.strings = c("NA",""), header=TRUE)
 
@@ -39,8 +38,6 @@ qqline(df$rosette)
 with(df, shapiro.test(rosette))
 #If p<5%, we reject hypothesis that residues follow normal distribution
 
-#Alternatively (need library "car")
-leveneTest(rosette~line, data=df)
 
 #ANOVA + Dunnett's test (assuming the 2 previous hypotheses of homoscedasticity and normality of residuals)
 fit = aov(rosette~line, data=df)

@@ -3,20 +3,46 @@ smRNA-seq analysis
 
 # Required softwares
 
-* bwai (v0.7.15)
+* bwa (v0.7.15)
 * bedtools (v2.25.0)
 * R (v3.5.0)
+* fastq-dump (v2.9.2)
 
 # Data
 
 Data available as fastq files in NCBI BioProject [PRJNA427142](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA427142)
 
+All libraries contain single end reads.
+
+Download fastq files
+```
+fastq-dump --split-spot SRR6456282
+fastq-dump --split-spot SRR6456283
+fastq-dump --split-spot SRR6456284
+fastq-dump --split-spot SRR6456285
+fastq-dump --split-spot SRR8069222
+fastq-dump --split-spot SRR8069223
+fastq-dump --split-spot SRR8069224
+```
+
+Rename fastq files
+
+```
+mv SRR6456282.fastq 1794_C.fastq
+mv SRR6456283.fastq 1794_D.fastq
+mv SRR6456284.fastq	1794_A.fastq
+mv SRR6456285.fastq	1794_B.fastq
+mv SRR8069222.fastq	3634_C.fastq
+mv SRR8069223.fastq	3634_B.fastq
+mv SRR8069224.fastq	3634_A.fastq
+```
+
 Library codes:
 
 * 1794_A: Block C IR #15-2
-* 1794_A: Block C IR #15-3
-* 1794_A: Block C IR #27-3
-* 1794_A: Block C IR #27-4
+* 1794_B: Block C IR #15-3
+* 1794_C: Block C IR #27-3
+* 1794_D: Block C IR #27-4
 * 3634_A: Col-0
 * 3634_B: Block E IR #16-5
 * 3634_C: Block E IR #18-5
@@ -41,6 +67,7 @@ done
 
 ## Extract reads mapping at IR
 
+Convert all bam files into bed files
 ```
 for i in *bam; do
     bedtools bamtobed -i $i > $i.bed
@@ -63,9 +90,18 @@ echo -e "chr1\t24334909\t24335722\ttarget_BlockE_plus_minus_100bp" target_BlockE
 
 Use bedtools to retrieve all reads overlapping the coordinates of the IR target +/- 100 bp
 
+
+For Block C IR lines
 ```
-for i in *bam.bed; do
-	bedtools intersect -wa -a $i -b target_BlockX_plus_minus_100bp.bed > ${i}.target_Block*_region_plus_minus_100bp.bed
+for i in 1794*bam.bed; do
+	bedtools intersect -wa -a $i -b target_BlockC_plus_minus_100bp.bed > ${i}.target_region_plus_minus_100bp.bed
+done
+```
+
+For Block E IR lines and WT
+```
+for i in 3634*bam.bed; do
+	bedtools intersect -wa -a $i -b target_BlockE_plus_minus_100bp.bed > ${i}.target_region_plus_minus_100bp.bed
 done
 ```
 
@@ -98,7 +134,7 @@ All libraries have about 10M reads, use the values of read count for library A a
 
 Bed files ready to be analyzed in R (see script below)
 
-## Generate density plot in R 
+## Generate density plot in R (figure 2a and extended figure 6b)
 
 ### For libraries project 1794 (Block C IR)
 
@@ -127,27 +163,7 @@ covA <- coverage(readsA)
 covD <- coverage(readsD)
 ```
 
-### For libraries project 3634 (Block E IR + WT)
-
-Load bed files for the WT Col-0 (A) and the 2 libraries which map smRNAs at Block E (B, C)
-
-```{r}
-readsA = import.bed(con="3634_A.fastq.gz.bam.bed.target_region_BlockE_plus_minus_100bp.bed")
-readsB = import.bed(con="3634_B.fastq.gz.bam.bed.target_region_BlockE_plus_minus_100bp.bed")
-readsC = import.bed(con="3634_C.fastq.gz.bam.bed.target_region_BlockE_plus_minus_100bp.bed")
-covA <- coverage(readsA)
-covB <- coverage(readsB)
-covC <- coverage(readsC)
-```
-
-Calculate coverage
-
-```{r}
-covA <- coverage(readsA)
-covD <- coverage(readsD)
-```
-
-### Plot read density for Block C
+#### Plot read density for Block C (figure 2a)
 
 Plot read density at the target region. Get first and last position for each bed file looking at 5' coordinate of first read and 3' coordinate of last read (avoid error while plotting) 
 To normalize the amount of reads, divide coverage by the total number of reads of each library
@@ -189,7 +205,27 @@ abline(v=496, col="blue")
 ```
 
 
-## Plot read density for Block E
+### For libraries project 3634 (Block E IR + WT)
+
+Load bed files for the WT Col-0 (A) and the 2 libraries which map smRNAs at Block E (B, C)
+
+```{r}
+readsA <- import.bed(con="3634_A.fastq.gz.bam.bed.target_region_BlockE_plus_minus_100bp.bed")
+readsB <- import.bed(con="3634_B.fastq.gz.bam.bed.target_region_BlockE_plus_minus_100bp.bed")
+readsC <- import.bed(con="3634_C.fastq.gz.bam.bed.target_region_BlockE_plus_minus_100bp.bed")
+covA <- coverage(readsA)
+covB <- coverage(readsB)
+covC <- coverage(readsC)
+```
+
+Calculate coverage
+
+```{r}
+covA <- coverage(readsA)
+covD <- coverage(readsD)
+```
+
+#### Plot read density for Block E (extended figure 6b)
 
 Plot read density at the target region. Get first and last position for each bed file looking at 5' coordinate of first read and 3' coordinate of last read (avoid error while plotting) 
 To normalize the amount of reads, divide coverage by the total number of reads of each library
@@ -217,9 +253,7 @@ abline(v=614, col="blue")
 
 # Generate plot frequency distribution of read size (Fig. 2b, Extended Fig. 6c)
 
-## Get read size
-
-### For Block C IR
+## Get read size for Block C IR
 
 Create a report with the number of read mapping at Block C. Each line in the bam file matches with one mapped read
 
@@ -248,31 +282,17 @@ Get rid of unremoved part of adapter sequences on the reads (unproper trimming o
 *ready files can be analysed in R (see script below)*
 
 
-### For Block E IR
-
-
-```
-for i in *bam; do
-    samtools index -b $i
-	samtools view $i "chr1:24335009-24335622" > ${i}_reads_BlockE.sam # to concatenate a variable, put the variable name between curly brackets
-done
-```
-
-## Plot read size
-
-### For Block C IR
+### Plot read size distribution (figure 2b)
 
 For normalized read length distribution, just give percent of smRNA-seq in each category as we look only into the reads into BlockC. To do, use prop.table function of contigency table generated with table()
 
 ```{r}
-lengthA = scan("1794_A.fastq.bam_reads_target_region.ready")
-lengthB = scan("1794_B.fastq.bam_reads_target_region.ready")
-lengthC = scan("1794_C.fastq.bam_reads_target_region.ready")
-lengthD = scan("1794_D.fastq.bam_reads_target_region.ready")
+lengthA <- scan("1794_A.fastq.bam_reads_target_region.ready")
+lengthB <- scan("1794_B.fastq.bam_reads_target_region.ready")
+lengthC <- scan("1794_C.fastq.bam_reads_target_region.ready")
+lengthD <- scan("1794_D.fastq.bam_reads_target_region.ready")
 
-dataList = list("#15-2"=lengthA, "#15-3"=lengthB, "#27-3"=lengthC, "#27-4"=lengthD)
-
-boxplot(dataList, main="Read distribution at target region", cex.main=1, ylab="read length")
+dataList <- list("#15-2"=lengthA, "#15-3"=lengthB, "#27-3"=lengthC, "#27-4"=lengthD)
 
 par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
 
@@ -282,19 +302,38 @@ mtext("Distribution of read sizes at target region", outer = TRUE, cex = 1)
 
 ```
 
-### For Block E IR
 
+## Get read size for Block E IR
+
+Create a report with the number of read mapping at Block E. Each line in the bam file matches with one mapped read
+
+```
+for i in *bam; do
+    samtools index -b $i
+	samtools view $i "chr1:24335009-24335622" > ${i}_reads_BlockE.sam # to concatenate a variable, put the variable name between curly brackets
+done
+```
+
+No problem of unremoved adapter sequences for the libraries of Block E IR and Col-0 but still do this step to get only the part of the reads that match the reference sequence.
+
+```
+ for i in *sam;  do
+    cut -f19 $i | awk -F":" '{print $3}' - | sed -e 's/\^//g' -e 's/^[0-9][A-Z][0-9][A-Z]//g' -e 's/^[0-9][A-Z]//g' -e 's/[A-Z][0-9][0-9][A-Z][0-9][0-9]$//g' -e 's/[A-Z][0-9][0-9][A-Z][0-9]$//g' -e 's/[A-Z][0-9][0-9]$//g' -e 's/[A-Z][0-9][A-Z][0-9]$//g' -e 's/[A-Z][0-9]$//g' - | grep -w '[0-9][0-9]' - > ${i}.ready
+ done
+```
+
+*ready files can be analysed in R (see script below)*
+
+### Plot read size distribution (extended figure 6c)
+
+For normalized read length distribution, just give percent of smRNA-seq in each category as we look only into the reads into BlockC. To do, use prop.table function of contigency table generated with table()
 
 ```{r}
 
-lengthA = scan("3634_A.fastq.gz.bam_reads_BlockE.sam.ready")
-lengthB = scan("3634_B.fastq.gz.bam_reads_BlockE.sam.ready")
-lengthC = scan("3634_C.fastq.gz.bam_reads_BlockE.sam.ready")
+lengthB <- scan("3634_B.fastq.gz.bam_reads_BlockE.sam.ready")
+lengthC <- scan("3634_C.fastq.gz.bam_reads_BlockE.sam.ready")
 
-dataList = list("Col-0"=lengthA, "#16-5"=lengthB, "#18-5"=lengthC)
-#Display boxplot
-
-boxplot(dataList, main="Read distribution at target region", cex.main=1, ylab="read length")
+dataList <- list("#16-5"=lengthB, "#18-5"=lengthC)
 
 par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
 

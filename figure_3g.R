@@ -1,8 +1,9 @@
-
+#libraries to load
+########################################################
 library(ggplot2)
 library(agricolae)
 library(multcomp)
-
+########################################################
 
 # Analysis 48031 ----------------------------------------------------------
 
@@ -12,6 +13,7 @@ df$total <- df$rosette + df$cauline
 
 
 # Plot data ---------------------------------------------------------------
+
 df$cross <- factor(df$cross, levels = c("0T", "ft-10", "Block_C_27","Block_C_15","Block_E_18","Block_E_16","Col-0xBlock_C_27","Col-0xBlock_C_15","Block_C_27xCol-0","Block_C_15xCol-0","Block_E_16xCol-0","Col-0xBlock_E_18","Block_E_18xCol-0","Block_E_16xBlock_E_27","Block_E_16xBlock_E_15","Block_E_18xBlock_E_27","Block_E_18xBlock_E_15","Block_C_27xBlock_E_18","Block_C_27xBlock_E_16","Block_C_15xBlock_E_18","Block_C_15xBlock_E_16")) 
 
 give.n <- function(x){

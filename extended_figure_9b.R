@@ -27,7 +27,7 @@ ggplot(df, aes(line, rosette)) +
   scale_y_continuous(breaks=seq(0,60,10)) +
   theme_light() +
   ylab("") + 
-  xlab("")+
+  xlab("")#+
   theme(axis.text.x = element_blank(),legend.text=element_text(size=8), legend.title=element_text(size=8)) 
 
 
