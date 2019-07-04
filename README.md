@@ -1,7 +1,7 @@
 scripts_Zicola_2019
 ===
 
-Extended scripts and data from (Zicola et al., 2019)[https://www.nature.com/articles/s41477-019-0375-2]
+Extended scripts and data from [Zicola et al., 2019](https://www.nature.com/articles/s41477-019-0375-2)
 
 
 ## Flowering time
